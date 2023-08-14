@@ -61,7 +61,8 @@ def parse_win(fname):
 
     cell = np.array(cell)
     xcart = np.array(xcart)
-    if xcart != []:
+    #if xcart != []:
+    if xcart.size != 0: 
         atoms = Atoms(symbols=symbols, positions=xcart, cell=cell, pbc=True)
     elif xred != []:
         atoms = Atoms(symbols=symbols,

@@ -223,8 +223,8 @@ class LWF():
         wannR_imag[:] = np.imag(self.wannR)
         wann_center_xred[:] = np.array(self.wann_centers)
 
-        if twobody_terms is not None:
-            twobody_terms.write_to_netcdf_file(root)
+        #if twobody_terms is not None:
+        #    twobody_terms.write_to_netcdf_file(root)
 
         root.close()
 

@@ -12,3 +12,25 @@ It has interface to:
 
 The online documentation can be found at:
 https://banddownfolder.readthedocs.io/en/latest/index.html
+
+
+## Infomation provided by the modifier
+2023-08-14
+I fix some bugs in dir `wannierbuilder` and `setup.py` by simply comment out the error line of the code and minimize changes as far as possible.  
+My aims is to make the scripts in dir `example/Wannier90` running, and generating correct energy bands and real space hamiltonian, i.e. `band.png` and `hr.txt`.  
+I have not check other examples. I don't know whether ncfile works correctly or not.  
+
++ how to install (using conda env)
+```
+conda create -n wannierbuilder python=3.11 --yes
+conda activate wannierbuilder
+
+cd <package dir>
+pip install . 
+```
+
++ how to run `example/Wannier90`
+```
+cd example/Wannier90
+python downfold.py
+```

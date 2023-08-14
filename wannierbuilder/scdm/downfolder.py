@@ -241,7 +241,7 @@ class BandDownfolder():
                            erange=erange,
                            efermi=efermi,
                            cell=cell,
-                           ax=ax, **kargs)
+                           ax=ax)
         ax = plot_band(self.ewf,
                        kvectors=kvectors,
                        knames=knames,
@@ -253,7 +253,7 @@ class BandDownfolder():
                        marker=marker,
                        erange=erange,
                        cell=cell,
-                       ax=ax, **kargs)
+                       ax=ax)
         if savefig is not None:
             plt.savefig(savefig)
         if show:
@@ -312,21 +312,21 @@ class SislDownfolder(BandDownfolder):
         self.shift_fermi = None
 
         if mode == 'HS':
-        if H is None:
-            fdf = sisl.get_sile(os.path.join(folder, fdf_file))
-            fdf.read()
-            H = fdf.read_hamiltonian()
-            try:
-                self.efermi = fdf.read_fermi_level().data[0]
-            except:
-                self.efermi = fdf.read_fermi_level()
-            if recover_fermi:
-                self.shift_fermi = self.efermi
-                self.model = SislHSWrapper(H,
-                                           shift_fermi=self.shift_fermi,
-                                           ispin=ispin,
-                                           format=format,
-                                           nbands=nbands)
+            if H is None:
+                fdf = sisl.get_sile(os.path.join(folder, fdf_file))
+                fdf.read()
+                H = fdf.read_hamiltonian()
+                try:
+                    self.efermi = fdf.read_fermi_level().data[0]
+                except:
+                    self.efermi = fdf.read_fermi_level()
+                if recover_fermi:
+                    self.shift_fermi = self.efermi
+                    self.model = SislHSWrapper(H,
+                                               shift_fermi=self.shift_fermi,
+                                               ispin=ispin,
+                                               format=format,
+                                               nbands=nbands)
         elif mode == 'WFSX':
             wfsx_sile = sisl.get_sile(os.path.join(folder, wfsx_file))
             fdf = sisl.get_sile(os.path.join(folder, fdf_file))
