@@ -174,6 +174,7 @@ class BandDownfolder():
                  output_path='./',
                  write_hr_nc='Downfolded_hr.nc',
                  write_hr_txt='Downfolded_hr.txt',
+                 write_wannier_hr_dat='Downfolded_wannier_hr.dat',
                  **params):
         self.params.update(params)
         if 'post_func' in self.params:
@@ -191,6 +192,8 @@ class BandDownfolder():
             pass
         if write_hr_txt is not None:
             self.ewf.save_txt(os.path.join(output_path, write_hr_txt))
+        if write_wannier_hr_dat is not None:
+            self.ewf.save_wannier_hr_dat(os.path.join(output_path, write_wannier_hr_dat))
         if write_hr_nc is not None:
             #self.ewf.write_lwf_nc(os.path.join(output_path, write_hr_nc), atoms=self.atoms)
             self.ewf.write_nc(os.path.join(

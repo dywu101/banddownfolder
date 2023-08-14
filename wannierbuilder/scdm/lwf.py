@@ -7,6 +7,7 @@ from wannierbuilder.scdm.eigen_modifer import HamModifier, force_ASR_kspace
 import matplotlib.pyplot as plt
 from wannierbuilder.plot import plot_band
 from dataclasses import dataclass
+import datetime
 
 
 @dataclass
@@ -408,6 +409,26 @@ class LWF():
                             f"R = {R}, i = {i}, j={j} :: H(i,j,R)= {d[i,j]:.4f} \n"
                         )
                 myfile.write('-' * 60 + '\n')
+
+    def save_wannier_hr_dat(self, fname):
+        with open(fname, 'w') as myfile:
+            myfile.write(f"Written by banddownfolder at {datetime.datetime.now()}\n")
+            myfile.write(f"{self.nwann}\n")  # num of wann
+            myfile.write(f"{self.nR}\n")     # num of R vec
+            # print degen of irvec, all trival one for simplicity
+            # ref:'(15i5)' fortran
+            linebreak=15
+            for iR, R in enumerate(self.Rlist):
+                myfile.write(f"{1:4d} ")
+                if iR%linebreak==linebreak-1: myfile.write(f"\n")
+            if iR%linebreak!=linebreak-1: myfile.write(f"\n")
+            #myfile.write(f"Cell parameter: {self.cell}\n")
+            for iR, R in enumerate(self.Rlist):
+                d = self.HwannR[iR]
+                for i in range(self.nwann):
+                    for j in range(self.nwann):
+                        # ref: '(5i5,2f12.6)' fortran
+                        myfile.write(f"{R[0]:4d} {R[1]:4d} {R[2]:4d} {i+1:4d} {j+1:4d} {d[i,j].real:11.6f} {d[i,j].imag:11.6f}\n")
 
     def modify_evals(self, func, kmesh):
         ret = copy.deepcopy(self)

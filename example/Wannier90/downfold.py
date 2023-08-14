@@ -30,7 +30,8 @@ def main():
         post_func=None,
         output_path='./',
         write_hr_nc='Downfolded_hr.nc',
-        write_hr_txt='Downfolded_hr.txt')
+        write_hr_txt='Downfolded_hr.txt',
+        write_wannier_hr_dat='Downfolded_wannier_hr.dat')
 
     # Plot the band structure.
     model.plot_band_fitting(
