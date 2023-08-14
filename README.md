@@ -40,7 +40,10 @@ cd example/Wannier90
 python downfold.py
 ```
 
-+ new function
++ new function  
+
 I add a new function called `model.downfold(write_wannier_hr_dat='Downfolded_wannier_hr.dat')`,  
-this function will output real space hamiltonian in wannier90-like format.
+this function will output real space hamiltonian in wannier90-like format. example is also updated.
+
 If you don't want to use this new function, set this tag to `None`, i.e. `write_wannier_hr_dat=None`.
+
