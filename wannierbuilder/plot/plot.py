@@ -13,7 +13,9 @@ def plot_band(model,
               erange=None,
               color='blue',
               alpha=0.8,
+              linestyle='-',
               marker='',
+              markerfacecolor='none',
               label=None,
               cell=np.eye(3),
               evals_to_freq=False,
@@ -42,10 +44,12 @@ def plot_band(model,
                     evalues[:, i],
                     color=color,
                     alpha=alpha,
+                    linestyle=linestyle,
                     marker=marker,
+                    markerfacecolor=markerfacecolor,
                     label=label)
         else:
-            ax.plot(x, evalues[:, i], color=color, alpha=alpha, marker=marker)
+            ax.plot(x, evalues[:, i], color=color, alpha=alpha, linestyle=linestyle, marker=marker, markerfacecolor=markerfacecolor)
 
     if efermi is not None:
         ax.axhline(efermi, linestyle='--', color='gray')

@@ -211,6 +211,7 @@ class BandDownfolder():
                           erange=None,
                           fullband_color='blue',
                           downfolded_band_color='green',
+                          linestyle='-',
                           marker='o',
                           ax=None,
                           savefig='Downfolded_band.png',
@@ -232,6 +233,7 @@ class BandDownfolder():
         savefig: the filename of the figure to be saved.
         show: whether to show the band structure.
         """
+        # full bands
         if True:
             ax = plot_band(self.model,
                            kvectors=kvectors,
@@ -245,6 +247,7 @@ class BandDownfolder():
                            efermi=efermi,
                            cell=cell,
                            ax=ax)
+        # downfolded bands
         ax = plot_band(self.ewf,
                        kvectors=kvectors,
                        knames=knames,
@@ -253,6 +256,7 @@ class BandDownfolder():
                        efermi=efermi,
                        color=downfolded_band_color,
                        alpha=0.5,
+                       linestyle=linestyle,
                        marker=marker,
                        erange=erange,
                        cell=cell,

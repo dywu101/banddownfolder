@@ -412,9 +412,9 @@ class LWF():
 
     def save_wannier_hr_dat(self, fname):
         with open(fname, 'w') as myfile:
-            myfile.write(f"Written by banddownfolder at {datetime.datetime.now()}\n")
-            myfile.write(f"{self.nwann}\n")  # num of wann
-            myfile.write(f"{self.nR}\n")     # num of R vec
+            myfile.write(f"Written by banddownfolder on {datetime.datetime.now()}\n")
+            myfile.write(f" {self.nwann:5d}\n")  # num of wann
+            myfile.write(f" {self.nR:5d}\n")     # num of R vec
             # print degen of irvec, all trival one for simplicity
             # ref:'(15i5)' fortran
             linebreak=15
