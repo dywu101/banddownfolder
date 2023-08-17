@@ -1,21 +1,7 @@
-# banddownfolder
-[![Documentation Status](https://readthedocs.org/projects/banddownfolder/badge/?version=latest)](https://banddownfolder.readthedocs.io/en/latest/?badge=latest)
-[![Build Status](https://travis-ci.com/mailhexu/banddownfolder.svg?branch=master)](https://travis-ci.com/mailhexu/banddownfolder)
-
-BandDownfolder is a python package for build  electron/phonon/magnon/etc Wannier functions.
-
-
-It has interface to:
- * Siesta (through sisl)
- * Anaddb (part of Abinit)
- * Phonopy
-
-The online documentation can be found at:
-https://banddownfolder.readthedocs.io/en/latest/index.html
-
 
 # Infomation from modified coder
-2023-08-14 forked from [mailhexu/banddownfolder](https://github.com/mailhexu/banddownfolder)
+2023-08-14 forked from [mailhexu/banddownfolder](https://github.com/mailhexu/banddownfolder)  
+[original author's documents](https://banddownfolder.readthedocs.io/en/latest/index.html)  
 
 + debug 
 I fix some bugs and typos in dir `wannierbuilder` and `setup.py` by simply comment out the error line of the code, I try to minimize changes as far as possible.
