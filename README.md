@@ -1,6 +1,6 @@
 # banddownfolder
 [![Documentation Status](https://readthedocs.org/projects/banddownfolder/badge/?version=latest)](https://banddownfolder.readthedocs.io/en/latest/?badge=latest)
-![Static Badge](https://img.shields.io/badge/:badgeContent)
+![Static Badge](https://img.shields.io/badge/any_text-you_like-green)
 
 BandDownfolder is a python package for build  electron/phonon/magnon/etc Wannier functions.
 
