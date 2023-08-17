@@ -17,14 +17,16 @@ https://banddownfolder.readthedocs.io/en/latest/index.html
 # Infomation from modified coder
 ![Static Badge](https://img.shields.io/badge/build-passing-blue)
 
-on 2023-08-14, I forked this project from [mailhexu/banddownfolder](https://github.com/mailhexu/banddownfolder), 
+2023-08-14, I forked this project from [mailhexu/banddownfolder](https://github.com/mailhexu/banddownfolder), 
 please see [original author's documents](https://banddownfolder.readthedocs.io/en/latest/index.html).  
 I just build this project and make some examples pass the test.
+
 
 ## debug 
 I fix some bugs and typos in dir `wannierbuilder` and `setup.py` by simply comment out the error line of the code, I try to minimize changes as far as possible.
 My aims is to make the scripts in dir `example/Wannier90` and `example/Phonopy/PbTiO3` running, and generating correct energy bands and real space hamiltonian, i.e. `band.png` and `hr.txt`. 
 I have not check other examples. I don't know whether ncfile works correctly or not.
+
 
 ## new function
 I add a new function called `model.downfold(write_wannier_hr_dat='Downfolded_wannier_hr.dat')`,  
@@ -39,9 +41,6 @@ model.plot_band_fitting(linestyle='', marker='o')  # pure empty points
 model.plot_band_fitting(linestyle='-',marker='o')  # with line-points
 ```
 
-
-## tested example
-see `example/Wannier90` and `example/Phonopy/PbTiO3`.
 
 ## installation and example
 
@@ -59,10 +58,15 @@ pip install . -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 
-+ how to run `example/Wannier90`
++ how to run examples  
+
+tested example, see `example/Wannier90` and `example/Phonopy/PbTiO3`.
 
 ```
 cd example/Wannier90
 python downfold.py
+
+cd example/Phonopy/PbTiO3
+python genwann.py
 ```
 
