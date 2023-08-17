@@ -1,6 +1,6 @@
 # banddownfolder
 [![Documentation Status](https://readthedocs.org/projects/banddownfolder/badge/?version=latest)](https://banddownfolder.readthedocs.io/en/latest/?badge=latest)
-![Static Badge](https://img.shields.io/badge/any_text-you_like-green)
+[![Build Status](https://travis-ci.com/mailhexu/banddownfolder.svg?branch=master)](https://travis-ci.com/mailhexu/banddownfolder)
 
 BandDownfolder is a python package for build  electron/phonon/magnon/etc Wannier functions.
 
@@ -15,8 +15,11 @@ https://banddownfolder.readthedocs.io/en/latest/index.html
 
 
 # Infomation from modified coder
-2023-08-14 forked from [mailhexu/banddownfolder](https://github.com/mailhexu/banddownfolder)  
-[original author's documents](https://banddownfolder.readthedocs.io/en/latest/index.html)  
+![Static Badge](https://img.shields.io/badge/build-passing-blue)
+
+on 2023-08-14, I forked this project from [mailhexu/banddownfolder](https://github.com/mailhexu/banddownfolder), 
+please see [original author's documents](https://banddownfolder.readthedocs.io/en/latest/index.html).
+I just build this project and make some examples pass the test.
 
 + debug 
 I fix some bugs and typos in dir `wannierbuilder` and `setup.py` by simply comment out the error line of the code, I try to minimize changes as far as possible.
@@ -28,7 +31,8 @@ I add a new function called `model.downfold(write_wannier_hr_dat='Downfolded_wan
 this function will output real space hamiltonian in wannier90-like format. example is also updated.  
 If you don't want to use this new function, set this tag to `None`, i.e. `write_wannier_hr_dat=None`.
 
-I add a new tag in `model.plot_band_fitting(linestyle='-')`. Usage suggetion:  
+I add a new tag in `model.plot_band_fitting(linestyle='-')`.  
+Usage suggetion:  
 ```
 model.plot_band_fitting(linestyle='-',marker='')  # pure line
 model.plot_band_fitting(linestyle='', marker='o')  # pure empty points
